@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Advanced Search</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="nav-links">
+    <a href="index.html">Google Search</a>
+</div>
+
+<div class="advanced-box">
+    <label>Find pages with... all these words:</label>
+    <input type="text" id="all-words">
+    
+    <label>Find pages with... this exact word or phrase:</label>
+    <input type="text" id="exact-phrase">
+    
+    <label>Find pages with... any of these words:</label>
+    <input type="text" id="any-words">
+
+    <label>Find pages with... none of these words:</label>
+    <input type="text" id="none-words">
+
+    <button onclick="advancedSearch()" class="advanced-button">Advanced Search</button>
+</div>
+
+<script>
+    function advancedSearch() {
+        const allWords = document.getElementById("all-words").value;
+        const exactPhrase = document.getElementById("exact-phrase").value;
+        const anyWords = document.getElementById("any-words").value.split(" ").join("+OR+");
+        const noneWords = "-" + document.getElementById("none-words").value.split(" ").join("+-");
+
+        const query = `${allWords}+"${exactPhrase}"+${anyWords}+${noneWords}`;
+        window.location.href = `https://www.google.com/search?q=${query}`;
+    }
+</script>
+
+</body>
+</html>

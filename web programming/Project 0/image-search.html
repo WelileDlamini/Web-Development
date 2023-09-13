@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Image Search</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="nav-links">
+    <a href="index.html">Google Search</a>
+</div>
+
+<div class="center-box">
+    <input type="text" id="image-query" placeholder="Search for images">
+    <button onclick="imageSearch()">Search Images</button>
+</div>
+
+<script>
+    function imageSearch() {
+        const query = document.getElementById("image-query").value;
+        window.location.href = `https://www.google.com/search?tbm=isch&q=${query}`;
+    }
+</script>
+
+</body>
+</html>

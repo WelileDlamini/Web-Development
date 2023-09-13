@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Search</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="nav-links">
+    <a href="image-search.html">Image Search</a> |
+    <a href="advanced-search.html">Advanced Search</a>
+</div>
+
+<div class="center-box">
+    <input type="text" id="search-query" placeholder="Search Google or type a URL">
+    <div class="button-container">
+        <button onclick="googleSearch()">Google Search</button>
+        <button onclick="imFeelingLucky()">I'm Feeling Lucky</button>
+    </div>
+</div>
+
+<script>
+    function googleSearch() {
+        const query = document.getElementById("search-query").value;
+        window.location.href = `https://www.google.com/search?q=${query}`;
+    }
+
+    function imFeelingLucky() {
+        const query = document.getElementById("search-query").value;
+        window.location.href = `https://www.google.com/search?q=${query}&btnI`;
+    }
+</script>
+
+</body>
+</html>
